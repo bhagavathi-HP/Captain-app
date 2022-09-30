@@ -25,7 +25,6 @@ const AdminBox = () => {
     console.log("handleError errors", errors);
   };
   const onSubmitpush = () => {
-    console.log("On submit push inde", inde);
     if (inde != -1) {
       console.log("if condition");
       const newarray = [...array];
@@ -35,15 +34,13 @@ const AdminBox = () => {
     } else {
       setArray([...array, myobj]);
     }
-    console.log("myobj", myobj);
+
     setMyobj(initarray);
   };
-  console.log("my obj after click", myobj);
+
   const updatingObj = (desc, value) => {
-    console.log("updating");
     const myfilter = array.filter((item, index) => {
       if (desc === "type" && item.type === value && item.dish === myobj.dish) {
-        console.log("type index", index);
         setInde(index);
         return true;
       } else if (
@@ -51,7 +48,6 @@ const AdminBox = () => {
         item.dish === value &&
         item.type === myobj.type
       ) {
-        console.log("dish index", index + 1);
         setInde(index);
         return true;
       }
@@ -60,7 +56,7 @@ const AdminBox = () => {
       myobj.quantity = myfilter[0].quantity;
       myobj.price = myfilter[0].price;
     }
-    console.log("my filtered", myfilter);
+
     setMyobj({ ...myobj, [desc]: value });
   };
   const options = {
@@ -84,7 +80,6 @@ const AdminBox = () => {
   };
   const handleRegistration = (data) => {
     onSubmitpush();
-    console.log("data", data);
   };
 
   return (

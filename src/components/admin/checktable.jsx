@@ -8,8 +8,13 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
 const CheckTable = ({ prop }) => {
-  const checkobj = prop;
+  const [checkobj, setCheckobj] = useState(prop);
 
+  useEffect(() => {
+    setCheckobj(prop);
+  }, [prop]);
+
+  console.log("check obj", checkobj);
   return (
     <div>
       <p>Check table</p>
@@ -21,6 +26,7 @@ const CheckTable = ({ prop }) => {
               <TableCell align="right">Dish</TableCell>
               <TableCell align="right">quantity</TableCell>
               <TableCell align="right">price</TableCell>
+              <TableCell align="right">delete</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -35,6 +41,9 @@ const CheckTable = ({ prop }) => {
                 <TableCell align="right">{row.dish}</TableCell>
                 <TableCell align="right">{row.quantity}</TableCell>
                 <TableCell align="right">{row.price}</TableCell>
+                <TableCell align="right">
+                  <button>del</button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
