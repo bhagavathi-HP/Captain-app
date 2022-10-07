@@ -4,7 +4,6 @@ import "../../captain.css";
 import Popup from "../../components/popup/popup";
 const CaptainBox = () => {
   const captainAvailable = useContext(Available);
-  console.log("Captain Available", captainAvailable);
   const [trig, setTrig] = useState(false);
   return (
     <div>
@@ -14,9 +13,18 @@ const CaptainBox = () => {
         Table 1
       </button>
       {trig && <Popup close={setTrig} />}
-      <button className="borderbox">Table 2</button>
-      <button className="borderbox">Table 3</button>
-      <button className="borderbox">Table 4</button>
+      <button className="borderbox" onClick={() => setTrig(true)}>
+        Table 2
+      </button>
+      {trig && <Popup close={setTrig} />}
+      <button className="borderbox" onClick={() => setTrig(true)}>
+        Table 3
+      </button>
+      {trig && <Popup close={setTrig} />}
+      <button className="borderbox" onClick={() => setTrig(true)}>
+        Table 4
+      </button>
+      {trig && <Popup close={setTrig} />}
     </div>
   );
 };

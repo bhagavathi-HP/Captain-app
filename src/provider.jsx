@@ -8,6 +8,7 @@ const MyContextProvider = ({ children }) => {
     console.log("providerArray", array);
     setContextArray(array);
   }, []);
+  console.log("ContextArray", contextArray);
   return (
     <div>
       <Available.Provider value={contextArray}>{children}</Available.Provider>

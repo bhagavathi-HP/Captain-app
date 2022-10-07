@@ -1,0 +1,10 @@
+.popup {
+  display: flex;
+
+  width: 10rem;
+  height: 10rem;
+  border: 2px solid black;
+  padding: 2rem;
+  margin: 10px;
+  background-color: pink;
+}
